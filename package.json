@@ -6,7 +6,14 @@
     "start": "eleventy --serve --quiet",
     "compile": "eleventy",
     "create-search-index": "pagefind --site _site",
-    "build": "eleventy --quiet && npm run create-search-index"
+    "build": "eleventy --quiet && npm run create-search-index",
+
+    "clean": "rm -rf _site && mkdir _site",
+    "copy": "find '_notes/' -type f -not -name _notes.11tydata.js -delete && cp -p '/Users/binnyva/PKM/DZG/'* '_notes'",
+
+    "build:prod": "ENVIRONMENT=production eleventy --quiet && npm run create-search-index",
+    "rsync:prod": "rsync -aze ssh '_site/' binnyva.com@binnyva.com:'/home/binnyva.com/domains/notes.binnyva.com/public_html/'",
+    "deploy:prod": "npm run clean && npm run copy && npm run build:prod && npm run rsync:prod"
   },
   "keywords": [
     "markdown",
