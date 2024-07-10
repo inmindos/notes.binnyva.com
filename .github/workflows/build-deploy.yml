@@ -12,17 +12,22 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
+    - uses: actions/checkout@v3
+    - name: Setup
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18
         cache: 'npm'
     - run: npm ci
-    - run: npm run build
+    - name: Build
+      run: npm run build:prod
+    - name: Deploy via SSH
+      uses: burnett01/rsync-deployments@7.0.1
+      with:
+        switches: -avzr
+        path: _site/
+        remote_path: ${{ secrets.BINNYVA_COM_NOTES_PATH }}
+        remote_host: binnyva.com
+        remote_user: ${{ secrets.BINNYVA_COM_USER }}
+        remote_key: ${{ secrets.BINNYVA_COM_SSH_PRIVATE_KEY }}
