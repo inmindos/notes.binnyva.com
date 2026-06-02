@@ -7,7 +7,9 @@ tags:
 date: 2024-07-29 19:41:00
 ---
 
-This is your initial impression about some thing. If its a problem you have seen multiple times in the past, your [[Thinking Fast and Slow|fast thinking system]] will give you an answer that is reliable. But often enough, it will give you answers that are not as good. It has matched a pattern - but might not be the best solution.
+Initial impression about something can be misleading. 
+
+If its a problem you have seen multiple times in the past, your [[Thinking Fast and Slow|fast thinking system]] will give you an answer that is reliable. But often enough, it will give you answers that are not as good. It has matched a pattern - but might not be the best solution.
 
 The problem at this point is that brain will defend this initial impression. Its requires some effort to sit and think of another solution - the brain will be telling you that the initial one was good. This is because the brain wants to conserve energy that will be used for thinking. But this is short term optimization that might create issues in long term.
 

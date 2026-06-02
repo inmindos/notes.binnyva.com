@@ -363,11 +363,8 @@ tbody tr:nth-child(even) {
 }
 
 hr {
-    background-color: var(--horizontal-rule-color);
-    color: var(--horizontal-rule-color);
-    border: 0 none;
-    height: 1px;
-    margin-top: -10px;
+    border: 1px solid var(--border);
+    margin: 20px 0;
 }
 
 /* Blogposts: Post-heading, Post-subheading, Post-content, Related Posts*/
